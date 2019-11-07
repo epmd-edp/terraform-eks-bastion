@@ -5,7 +5,7 @@ resource "aws_instance" "bastion" {
   associate_public_ip_address = true
   key_name                    = "${var.key_name}"
 
-  vpc_security_group_ids = ["${aws_security_group.bastion.id}"]
+  vpc_security_group_ids = "${var.security_group_ids}"
 
   tags = "${merge(var.tags, map(
     "Name", "${var.platform_name}-bastion",
