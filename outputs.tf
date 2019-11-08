@@ -7,5 +7,5 @@ output "aws_bastion_public_ip" {
 }
 
 output "aws_bastion_security_group_id" {
-  value = "${aws_security_group.bastion.id}"
+  value = "${aws_security_group.bastion.*.id}"
 }
